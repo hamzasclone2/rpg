@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://5jwts33b21mq"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_x4rf4"]
-[ext_resource type="Texture2D" uid="uid://cmmgbw1ipb53d" path="res://tilemap_packed.png" id="2_2gljv"]
+[ext_resource type="Texture2D" uid="uid://bbe2dh0senhlm" path="res://Sprites/player.png" id="2_v72yk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0xa2t"]
-atlas = ExtResource("2_2gljv")
-region = Rect2(16, 128, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq1ma"]
+atlas = ExtResource("2_v72yk")
 
 [node name="Player" type="Node2D"]
 position = Vector2(7, 24)
 script = ExtResource("1_x4rf4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_0xa2t")
+texture = SubResource("AtlasTexture_lq1ma")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D"]
 

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0ppnjxr68h31"]
+
+[ext_resource type="Texture2D" uid="uid://bbe2dh0senhlm" path="res://Sprites/player.png" id="1_kxndu"]
+[ext_resource type="Script" path="res://Battle.gd" id="1_pxauk"]
+[ext_resource type="Texture2D" uid="uid://dugcblgcy65ll" path="res://Sprites/giant-rat.png" id="2_4seb2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mro6w"]
+atlas = ExtResource("1_kxndu")
+
+[sub_resource type="LabelSettings" id="LabelSettings_iurdb"]
+font_size = 8
+
+[node name="Battle" type="CanvasLayer"]
+script = ExtResource("1_pxauk")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.133196, 0.133196, 0.133196, 1)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(24, 40)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = SubResource("AtlasTexture_mro6w")
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(120, 40)
+texture = ExtResource("2_4seb2")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 88.0
+offset_right = 160.0
+offset_bottom = 160.0
+
+[node name="Level Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 7.0
+text = "Level: 0"
+label_settings = SubResource("LabelSettings_iurdb")
+
+[node name="HP Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 50.0
+offset_bottom = 23.0
+text = "HP: 0/0"
+label_settings = SubResource("LabelSettings_iurdb")
+
+[node name="MP Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 52.0
+offset_bottom = 39.0
+text = "MP: 0/0"
+label_settings = SubResource("LabelSettings_iurdb")
+
+[node name="EXP Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 52.0
+offset_bottom = 55.0
+text = "EXP: 0"
+label_settings = SubResource("LabelSettings_iurdb")
+
+[node name="Gold Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 52.0
+offset_bottom = 71.0
+text = "Gold: 0"
+label_settings = SubResource("LabelSettings_iurdb")
