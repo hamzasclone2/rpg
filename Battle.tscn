@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ppnjxr68h31"]
+[gd_scene load_steps=6 format=3 uid="uid://d0ppnjxr68h31"]
 
 [ext_resource type="Script" path="res://Battle.gd" id="1_pxauk"]
-[ext_resource type="Texture2D" uid="uid://dugcblgcy65ll" path="res://Sprites/giant-rat.png" id="2_4seb2"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ybxd2"]
-font_size = 8
+[ext_resource type="PackedScene" uid="uid://1gko00c42bp6" path="res://Battle_Enemy.tscn" id="2_0wmvq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_13dud"]
 font_size = 8
@@ -28,19 +25,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.133196, 0.133196, 0.133196, 1)
 
-[node name="Enemy" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(120, 40)
-texture = ExtResource("2_4seb2")
-
-[node name="Label" type="Label" parent="Enemy"]
-offset_left = 104.0
-offset_top = 64.0
-offset_right = 144.0
-offset_bottom = 87.0
-text = "Giant Rat"
-label_settings = SubResource("LabelSettings_ybxd2")
+[node name="Enemy" parent="." instance=ExtResource("2_0wmvq")]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -59,6 +44,7 @@ text = "default text default text"
 label_settings = SubResource("LabelSettings_13dud")
 autowrap_mode = 3
 text_overrun_behavior = 4
+visible_characters_behavior = 1
 
 [node name="Player_Name Label" type="Label" parent="Control"]
 layout_mode = 0

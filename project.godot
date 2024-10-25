@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PlayerAttributes="*res://player_attributes.gd"
+PlayerAttributes="*res://Player_Attributes.gd"
 
 [display]
 
